@@ -9,6 +9,6 @@ Scenario: Filter By ID
   And param id = 3
   When method GET
   Then status 200
-  And print response
+  And karate.log(response)
   And assert response.id == 3
   

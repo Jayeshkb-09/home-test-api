@@ -9,7 +9,7 @@ Scenario: Validate recent added item is present in the inventory
   And param id = 995
   When method GET
   Then status 200
-  And print response
+  And karate.log(response)
   #And assert response.data.length > 0
   * match  response contains
   """

@@ -30,7 +30,7 @@ karate-project
 
 ## Setup Instructions
 
-1. **Prerequisites**: Ensure you have Java and Maven installed on your machine.
+1. **Prerequisites**: Ensure you have Java v21 and latest Maven version installed on your machine.
 2. **Clone the Repository**: Clone this project to your local machine using:
    ```
    git clone <repository-url>

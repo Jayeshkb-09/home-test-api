@@ -2,33 +2,37 @@ Feature: Home API Test
 
 Background:
   * url baseUrl
-  * def req = read('classpath:testData/addItem_New.json')
+  * def request_body = read('classpath:testData/addItem_New.json')
 
 Scenario: Add item with missing id
+  # Simulating missing id
+  * remove request_body.id  
   Given path '/inventory/add'
-  * remove req.id  # Simulating missing id
   When method POST
   Then status 400
-  And print response
+  And karate.log(response)
   * match  response contains 'Not all requirements are met'
 Scenario: Add item with missing name
+  # Simulating missing name
+  * remove request_bodyname  
   Given path '/inventory/add'
-  * remove req.name  # Simulating missing name
   When method POST
   Then status 400
   And print response
   * match response contains 'Not all requirements are met'
 
 Scenario: Add item with missing price
+  # Simulating missing price
+  * remove request_bodyprice  
   Given path '/inventory/add'
-  * remove req.price  # Simulating missing price
   When method POST
   Then status 400
   And print response
   * match response contains 'Not all requirements are met'
 Scenario: Add item with missing image
-  Given path '/inventory/add'   
-  * remove req.image  # Simulating missing image
+  # Simulating missing image
+  * remove request_bodyimage
+  Given path '/inventory/add'    
   When method POST
   Then status 400
   And print response
