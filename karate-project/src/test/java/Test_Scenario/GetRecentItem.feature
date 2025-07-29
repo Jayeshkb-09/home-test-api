@@ -2,22 +2,15 @@ Feature: Home API Test
 
 Background:
   * url baseUrl
+  * def request_body = read('classpath:testData/addItem_Existent.json')
   
 
 Scenario: Validate recent added item is present in the inventory
   Given path '/inventory/filter'
-  And param id = 995
+  And param id = 1
   When method GET
   Then status 200
   And karate.log(response)
-  #And assert response.data.length > 0
-  * match  response contains
-  """
-  {
-  "id": "995",
-  "name": "Dosa",
-  "image": "Dosaimage.jpg",
-  "price": "$10.99"
-  }
-  """
+  * match  response contains request_body
+  
   

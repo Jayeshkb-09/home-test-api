@@ -10,8 +10,4 @@ Scenario: Get all menu items
   Then status 200
   And karate.log(response)
   And assert response.data.length >= 9
-  * match each response.data contains"""
-  {
-  id: '#present',name: '#present',image: '#present',price: '#present'
-  }
-  """ 
+  * match each response.data contains { id: '#present',name: '#present',image: '#present',price: '#present'}
