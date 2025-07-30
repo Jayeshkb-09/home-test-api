@@ -4,6 +4,8 @@ This project is set up to use the Karate framework for API testing. Below are th
 
 ## Project Structure
 
+## Project Structure
+
 ``` 
 karate-project
 ├── src
@@ -11,15 +13,22 @@ karate-project
 │   │   └── java
 │   └── test
 │       ├── java
-│       │   └── Test_Scenario
-│       │       ├── testrunner.java
-│       │       └── AddItem_MissingInfo.feature
-│       └── resources
-│           └── testData
-│               └── addItem_New.json
+│       │   ├── Test_Scenario
+│       │   │   ├── AddItem_MissingInfo.feature
+│       │   │   ├── AddItem_ExistentId.feature
+│       │   │   ├── AddItem_NewId.feature
+│       │   │   ├── FilterById.feature
+│       │   │   ├── GetMenuItems.feature
+│       │   │   └── GetRecentItem.feature
+│       │   ├── testrunner.java
+│       │   ├── karate-config.js
+│       │   └── resources
+│       │       └── testData
+│       │           ├── addItem_New.json
+│       │           └── addItem_Existent.json
+├── target
 ├── pom.xml
-└── README.md
-```
+└──
 
 - **src/main/java**: No code added.
 - **src/test/java**: This directory is for test-related Java code, including test runner classes or utility classes.
